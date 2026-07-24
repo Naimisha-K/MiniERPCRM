@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -8,8 +9,8 @@ import {
   MenuItem,
   Paper,
   Snackbar,
-  Alert,
   Stack,
+  Alert,
   Table,
   TableBody,
   TableCell,
@@ -158,12 +159,20 @@ export default function Challans() {
       setQuantity(1);
       setItems([]);
 
-    } catch (err: any) {
-      alert(
-        err.response?.data?.message ??
-          "Failed to generate challan."
-      );
-    }
+    } catch (err: unknown) {
+  const error = err as {
+    response?: {
+      data?: {
+        message?: string;
+      };
+    };
+  };
+
+  alert(
+    error.response?.data?.message ??
+      "Failed to generate challan."
+  );
+}
   };
   return (
   <MainLayout>
@@ -224,11 +233,14 @@ export default function Challans() {
             Add Products
           </Typography>
 
-          <Stack
-            direction="row"
-            spacing={2}
-            flexWrap="wrap"
-          >
+          <Box
+  sx={{
+    display: "flex",
+    gap: 2,
+    flexWrap: "wrap",
+    alignItems: "center",
+  }}
+>
 
             <TextField
               select
@@ -276,7 +288,7 @@ export default function Challans() {
               Add Item
             </Button>
 
-          </Stack>
+          </Box>
 
           <Divider />
 
@@ -380,10 +392,13 @@ export default function Challans() {
 
           <Divider />
 
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-          >
+          <Box
+  sx={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
 
             <Typography
               variant="h6"
@@ -398,13 +413,15 @@ export default function Challans() {
               {totalQuantity}
             </Typography>
 
-          </Stack>
+          </Box>
 
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-          >
-
+         <Box
+  sx={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
             <Typography
               variant="h5"
             >
@@ -419,7 +436,7 @@ export default function Challans() {
               ₹{totalAmount.toFixed(2)}
             </Typography>
 
-          </Stack>
+          </Box>
 
           <Button
             variant="contained"
