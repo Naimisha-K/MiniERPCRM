@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+Backend/node_modules/
+frontend-react/node_modules/
+
+# Environment files
+.env
+Backend/.env
+frontend-react/.env
+
+# Build folders
+dist/
+Backend/dist/
+frontend-react/dist/
+
+# AI folders
+.agents/
+.claude/
+.windsurf/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
