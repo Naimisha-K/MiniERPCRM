@@ -22,7 +22,7 @@ import {
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import axios from "axios";
 import MainLayout from "../layouts/MainLayout";
 import api from "../services/api";
 
@@ -160,18 +160,14 @@ export default function Challans() {
       setItems([]);
 
     } catch (err: unknown) {
-  const error = err as {
-    response?: {
-      data?: {
-        message?: string;
-      };
-    };
-  };
-
-  alert(
-    error.response?.data?.message ??
+  if (axios.isAxiosError(err)) {
+    alert(
+      err.response?.data?.message ??
       "Failed to generate challan."
-  );
+    );
+  } else {
+    alert("Failed to generate challan.");
+  }
 }
   };
   return (
