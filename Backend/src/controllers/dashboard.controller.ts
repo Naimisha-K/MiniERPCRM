@@ -15,8 +15,9 @@ export const getDashboard = async (
     const allProducts = await prisma.product.findMany();
 
     const lowStock = allProducts.filter(
-      (p) => p.currentStock <= p.minimumStock
-    ).length;
+  (p: typeof allProducts[number]) =>
+    p.currentStock <= p.minimumStock
+).length;
 
     res.json({
       customers,
