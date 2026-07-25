@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  Box,
   Button,
   Dialog,
   DialogActions,
@@ -77,9 +78,22 @@ export default function StockDialog({
       </DialogTitle>
 
       <DialogContent>
-        <Typography sx={{ mb: 2 }}>
-          Product: <strong>{product?.productName}</strong>
-        </Typography>
+        <Box
+          sx={{
+            mb: 2.5,
+            p: 1.5,
+            borderRadius: 2,
+            backgroundColor:
+              type === "IN" ? "rgba(46,125,83,0.08)" : "rgba(192,57,43,0.08)",
+          }}
+        >
+          <Typography sx={{ fontSize: 12.5, color: "text.secondary" }}>
+            Product
+          </Typography>
+          <Typography sx={{ fontWeight: 700 }}>
+            {product?.productName}
+          </Typography>
+        </Box>
 
         <TextField
           label="Quantity"

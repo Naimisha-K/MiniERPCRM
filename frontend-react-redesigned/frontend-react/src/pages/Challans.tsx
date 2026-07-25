@@ -22,9 +22,11 @@ import {
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import ReceiptLongRoundedIcon from "@mui/icons-material/ReceiptLongRounded";
 import axios from "axios";
 import MainLayout from "../layouts/MainLayout";
 import api from "../services/api";
+import PageHeader from "../components/PageHeader";
 
 interface Customer {
   id: number;
@@ -173,20 +175,11 @@ export default function Challans() {
   return (
   <MainLayout>
 
-    <Typography
-      variant="h4"
-      gutterBottom
-      sx={{ fontWeight: "bold" }}
-    >
-      Create Sales Challan
-    </Typography>
-
-    <Typography
-      color="text.secondary"
-      sx={{ mb: 3 }}
-    >
-      Select a customer, add products, and generate a sales challan.
-    </Typography>
+    <PageHeader
+      icon={ReceiptLongRoundedIcon}
+      title="Create Sales Challan"
+      subtitle="Select a customer, add products, and generate a sales challan"
+    />
 
     <Card
       sx={{

@@ -5,6 +5,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Grid,
   TextField,
 } from "@mui/material";
 import api from "../services/api";
@@ -105,73 +106,80 @@ export default function ProductDialog({
       </DialogTitle>
 
       <DialogContent>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 16,
-            marginTop: 8,
-          }}
-        >
-          <TextField
-            label="Product Name"
-            name="productName"
-            value={formData.productName}
-            onChange={handleChange}
-            fullWidth
-          />
+        <Grid container spacing={2} sx={{ mt: 0.5 }}>
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <TextField
+              label="Product Name"
+              name="productName"
+              value={formData.productName}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="SKU"
-            name="sku"
-            value={formData.sku}
-            onChange={handleChange}
-            fullWidth
-          />
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <TextField
+              label="SKU"
+              name="sku"
+              value={formData.sku}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="Category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            fullWidth
-          />
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <TextField
+              label="Category"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="Unit Price"
-            name="unitPrice"
-            type="number"
-            value={formData.unitPrice}
-            onChange={handleChange}
-            fullWidth
-          />
+          <Grid size={{ xs: 12, sm: 6 }}>
+            <TextField
+              label="Warehouse"
+              name="warehouse"
+              value={formData.warehouse}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="Current Stock"
-            name="currentStock"
-            type="number"
-            value={formData.currentStock}
-            onChange={handleChange}
-            fullWidth
-          />
+          <Grid size={{ xs: 12, sm: 4 }}>
+            <TextField
+              label="Unit Price"
+              name="unitPrice"
+              type="number"
+              value={formData.unitPrice}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="Minimum Stock"
-            name="minimumStock"
-            type="number"
-            value={formData.minimumStock}
-            onChange={handleChange}
-            fullWidth
-          />
+          <Grid size={{ xs: 12, sm: 4 }}>
+            <TextField
+              label="Current Stock"
+              name="currentStock"
+              type="number"
+              value={formData.currentStock}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
 
-          <TextField
-            label="Warehouse"
-            name="warehouse"
-            value={formData.warehouse}
-            onChange={handleChange}
-            fullWidth
-          />
-        </div>
+          <Grid size={{ xs: 12, sm: 4 }}>
+            <TextField
+              label="Minimum Stock"
+              name="minimumStock"
+              type="number"
+              value={formData.minimumStock}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
+        </Grid>
       </DialogContent>
 
       <DialogActions>
