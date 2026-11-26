@@ -229,7 +229,7 @@ GET /dashboard
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/MiniERPCRM.git
+git clone https://github.com/Naimisha-K/MiniERPCRM.git
 ```
 
 ---
